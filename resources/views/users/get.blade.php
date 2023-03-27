@@ -7,10 +7,15 @@
     <body>
         <h1>GET</h1>
         <div class='users'>
+            <!--ユーザーを全件取得して名前と年齢を表示-->
             @foreach($users as $user)
                 <p class='name'>名前　：　{{ $user->name }}</p>
                 <p class='age'>年齢　：　{{ $user->age }}</p>
             @endforeach
+        </div>
+        <!--トップへ戻る-->
+        <div class="footer">
+            <a href="/">戻る</a>
         </div>
     </body>
 </html>

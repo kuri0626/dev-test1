@@ -7,15 +7,19 @@
     <body>
         <h1>DELETE</h1>
         <div class='users'>
+            <!--ユーザーを全件取得して名前を表示-->
             @foreach($users as $user)
             <p class='name'>{{ $user->name }}</p>
+            <!--選択したユーザーのidをPOST-->
             <form action="/users/{{ $user->id }}" id="form_{{ $user->id }}" method="post">
                 @csrf
                 @method('DELETE')
             </form>
+            <!--deleteボタン->確認のポップアップ-->
             <button  type="button" onclick="deleteUser({{ $user->id }})">delete</button>
             @endforeach
         </div>
+        <!--ポップアップで確認後、$user->idをsubmit-->
         <script>
             function deleteUser(id){
                 'use strict'
