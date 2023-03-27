@@ -22,3 +22,4 @@ Route::get('/users/get', [UsersController::class, 'get']);
 Route::get('/users/put', [UsersController::class, 'migrateToPut']);
 Route::put('/users/{user}', [UsersController::class, 'put']);
 Route::get('/users/delete', [UsersController::class, 'migrateToDelete']);
+Route::delete('/users/{user}', [UsersController::class, 'delete']);
