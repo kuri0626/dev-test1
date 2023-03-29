@@ -22,6 +22,7 @@ class UsersController extends Controller
     //ユーザーの新規投稿機能
     public function post(Request $request, Users $user)
     {
+        $user = User::find($request['user'][id]);
         $input = $request['user'];
         $user->fill($input)->save();
         return view('users/index');
