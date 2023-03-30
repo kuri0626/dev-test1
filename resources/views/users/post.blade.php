@@ -16,7 +16,7 @@
             <!--ユーザーの年齢入力欄-->
             <div class="age">
                 <h2>年齢</h2>
-                <input type="number" name="user[age]"/>
+                <input type="number" name="user[age]"  min="0" max="150"/>
             </div>
             <!--投稿ボタン-->
             <input type="submit" value="POST"/>

@@ -22,7 +22,6 @@ class UsersController extends Controller
     //ユーザーの新規投稿機能
     public function post(Request $request, Users $user)
     {
-        $user = User::find($request['user'][id]);
         $input = $request['user'];
         $user->fill($input)->save();
         return view('users/index');
@@ -34,10 +33,16 @@ class UsersController extends Controller
         return view('users/get')->with(['users'=>$user->get()]);
     }
     
+    //ユーザーの投稿一覧への遷移
+    public function article(Users $user)
+    {
+        return view('users/article')->with(['users' => $user->get()]);
+    }
+    
     //ユーザーの更新画面への遷移
     public function migrateToPut(Users $user)
     {
-        return view('users/put')->with(['users' => $user->get()]);
+        return view('users/put')->with(['users' => $user]);
     }
     
     //ユーザーの更新機能
