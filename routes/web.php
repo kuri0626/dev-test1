@@ -21,8 +21,10 @@ Route::get('/users/post', [UsersController::class, 'migrateToPost']);
 Route::post('/users/post', [UsersController::class, 'post']);
 // ユーザーの取得機能
 Route::get('/users/get', [UsersController::class, 'get']);
+//ユーザーの投稿一覧画面への遷移
+Route::get('/users/article', [UsersController::class, 'article']);
 // ユーザーの更新画面への遷移
-Route::get('/users/put', [UsersController::class, 'migrateToPut']);
+Route::get('/users/{user}/put', [UsersController::class, 'migrateToPut']);
 // ユーザーの更新機能
 Route::put('/users/{user}', [UsersController::class, 'put']);
 // ユーザーの削除画面への遷移

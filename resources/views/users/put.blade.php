@@ -7,23 +7,20 @@
     <body>
         <h1>PUT</h1>
         <div class="users">
-            <!--ユーザーを全件取得して名前と年齢を表示-->
-            @foreach($users as $user)
             <!--選択したユーザーのidをPOST-->
-            <form action="/users/{{ $user->id }}" method="POST">
+            <form action="/users/{{ $users->id }}" method="POST">
                 @csrf
                 @method('PUT')
                 <!--名前の入力欄-->
                 <div class='name'>
                     <h2>名前</h2>
-                    <input type='text' name='user[name]' value="{{ $user->name }}">
+                    <input type='text' name='user[name]' value="{{ $users->name }}">
                 </div>
                 <!--年齢の入力欄-->
                 <div class='age'>
                     <h2>年齢</h2>
-                    <input type='number' name="user[age]" min="0" max="150" value="{{ $user->age }}">
+                    <input type='number' name="user[age]" min="0" max="150" value="{{ $users->age }}">
                 </div>
-            @endforeach
             <!--value="PUT"でsubmit-->
             <div class="footer">
                 <input type="submit" value="PUT">
